@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wyatt Barnes — Mechanical Engineer</title>
+<meta name="description" content="Wyatt Barnes, Mechanical Engineering student at Cal Poly SLO — robotics, composites, and precision hardware.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+  ============================================================
+  HOW TO EDIT THIS SITE (read me first)
+  ============================================================
+  This is ONE file: HTML structure + CSS styling + a little JS,
+  all in one place on purpose so nothing can get "disconnected."
+
+  1. COLORS & FONTS
+     Scroll to the ":root { ... }" block below (search for "EDIT COLORS").
+     Every color and spacing value used on the page is defined once,
+     there. Change a value there and it updates everywhere it's used.
+     Do NOT change color values anywhere else in the file — always
+     edit them here so the whole site stays consistent.
+
+  2. YOUR PHOTO
+     Search for "EDIT PHOTO" below. Replace the placeholder monogram
+     with a real <img> tag pointing at your photo file. Instructions
+     are in the comment right above it.
+
+  3. TEXT CONTENT
+     Just find the text you want to change and edit it directly.
+     Anything inside <p>, <h1>-<h3>, or <li> tags is safe to edit.
+     Do NOT delete the tags themselves (the words in < > brackets) —
+     only change the text between them.
+
+  4. ADDING A NEW PROJECT/EXPERIENCE CARD
+     Search for "EDIT: DUPLICATE THIS CARD" — copy the whole block
+     from <article class="card"> to </article> and paste it where
+     you want the new entry, then edit the text inside.
+
+  5. IF SOMETHING LOOKS BROKEN
+     It's almost always a missing closing tag (e.g. a </div> or
+     </p> you deleted by accident) or a missing curly brace in the
+     CSS. Undo your last change and try again in a smaller step.
+  ============================================================
+-->
+
+<style>
+  /* ============================================================
+     EDIT COLORS / FONTS / SPACING — change values here, nowhere else
+     ============================================================ */
+  :root {
+    --paper:      #FAFAF9;   /* main background */
+    --paper-line: #E4E7EB;   /* hairline / blueprint grid color */
+    --ink:        #16181B;   /* primary text */
+    --ink-soft:   #565D66;   /* secondary text */
+    --blue:       #1F4E8C;   /* primary accent (links, buttons, marks) */
+    --blue-deep:  #16375F;   /* accent hover / dark contrast */
+    --blue-pale:  #EEF3FA;   /* pale accent fill for cards/tags */
+    --paper-card: #FFFFFF;   /* card background */
+
+    --font-head: 'IBM Plex Sans', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+    --max-width: 760px;
+    --radius: 3px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size: 34px 34px;
+    background-position: -1px -1px;
+    color: var(--ink);
+    font-family: var(--font-head);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--blue); }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--blue);
+    margin: 0 0 6px 0;
+  }
+
+  /* ---------- NAV (title-block style) ---------- */
+  header.nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    padding: 20px 16px 0;
+    background: linear-gradient(var(--paper) 60%, transparent);
+  }
+
+  nav.titleblock {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--paper-card);
+    border: 1px solid var(--paper-line);
+    border-radius: var(--radius);
+    padding: 6px;
+    box-shadow: 0 1px 0 rgba(22,24,27,0.03);
+  }
+
+  nav.titleblock a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    padding: 8px 16px;
+    border-radius: 2px;
+    transition: color 0.15s ease;
+  }
+
+  nav.titleblock a:hover { color: var(--ink); }
+
+  nav.titleblock a.contact-btn {
+    background: var(--ink);
+    color: #fff;
+    font-weight: 600;
+  }
+  nav.titleblock a.contact-btn:hover { background: var(--blue-deep); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    text-align: center;
+    padding: 72px 0 56px;
+  }
+
+  /* EDIT PHOTO:
+     To use a real photo instead of the monogram mark below, replace
+     the whole <div class="mark">...</div> block with:
+
+       <img src="profile.jpg" alt="Wyatt Barnes" class="avatar-photo">
+
+     ...then add this rule up in the CSS (or ask Claude to add it):
+       .avatar-photo { width:120px; height:120px; border-radius:50%;
+         object-fit:cover; border:2px solid var(--blue); }
+
+     Put your photo file (e.g. "profile.jpg") in the same folder as
+     this index.html file before uploading/publishing the site.
+  */
+  .avatar {
+    position: relative;
+    width: 132px;
+    height: 132px;
+    margin: 0 auto 32px;
+  }
+  .avatar .mark {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--blue-pale);
+    border: 1.5px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--blue-deep);
+  }
+  .avatar .bracket {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--blue);
+  }
+  .avatar .bracket.tl { top: -8px; left: -8px; border-right: none; border-bottom: none; }
+  .avatar .bracket.br { bottom: -8px; right: -8px; border-left: none; border-top: none; }
+
+  h1.headline {
+    font-size: 2.5rem;
+    line-height: 1.18;
+    font-weight: 600;
+    margin: 0 0 22px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero p {
+    max-width: 560px;
+    margin: 0 auto 16px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+
+  .hero-actions {
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--ink);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .btn.primary { background: var(--ink); color: #fff; }
+  .btn.primary:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: #fff; }
+
+  /* ---------- DIMENSION-LINE DIVIDER ---------- */
+  .dim-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    margin: 0 0 40px;
+  }
+  .dim-divider::before,
+  .dim-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--paper-line);
+    position: relative;
+  }
+  .dim-divider::before { border-left: 1px solid var(--ink-soft); }
+  .dim-divider::after { border-right: 1px solid var(--ink-soft); }
+
+  section { padding: 44px 0; }
+  section h2.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+
+  /* ---------- PROJECT / EXPERIENCE CARDS ---------- */
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--paper-card);
+    border: 1px solid var(--paper-line);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .card h3 {
+    font-size: 1.08rem;
+    margin: 0;
+    font-weight: 600;
+  }
+  .card .org {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+  .card .dates {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--blue);
+    white-space: nowrap;
+  }
+
+  .card ul {
+    margin: 10px 0 14px;
+    padding-left: 20px;
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+  }
+  .card li { margin-bottom: 4px; }
+
+  .tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    background: var(--blue-pale);
+    color: var(--blue-deep);
+    padding: 3px 9px;
+    border-radius: 2px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .about-block h3 {
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    color: var(--blue);
+    margin: 0 0 10px;
+  }
+  .about-block p, .about-block ul {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    margin: 0;
+    padding-left: 18px;
+  }
+  .about-block li { margin-bottom: 6px; }
+
+  @media (max-width: 620px) {
+    .about-grid { grid-template-columns: 1fr; }
+    h1.headline { font-size: 1.9rem; }
+    nav.titleblock a { padding: 8px 10px; font-size: 0.85rem; }
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-box {
+    background: var(--paper-card);
+    border: 1px solid var(--paper-line);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 0 60px;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="titleblock">
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="contact-btn">Contact</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="avatar">
+      <span class="bracket tl"></span>
+      <div class="mark">WB</div>
+      <span class="bracket br"></span>
+    </div>
+
+    <h1 class="headline">Mechanical engineer building robotic&nbsp;systems, composites, and precision hardware</h1>
+
+    <p>Blended BS + MS Mechanical Engineering student at Cal Poly, San Luis Obispo. Currently a Mechanical Engineering Intern at Epic Aircraft, working on aircraft manufacturing process improvements, and a research assistant studying carbon-nanotube-reinforced composites at the Cal Poly Multifunctional Materials Lab.</p>
+
+    <p>Two-time podium finisher at SAMPE 2026 for composite I-beam design, and a two-time podium finisher at ASME's eHPVC with the Cal Poly Human Powered Vehicle Club.</p>
+
+    <div class="hero-actions">
+      <a class="btn ghost" href="https://linkedin.com/in/wybarnes" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- EDIT: point this at your resume PDF once you've added it to the site folder -->
+      <a class="btn primary" href="Wyatt_Barnes_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS / EXPERIENCE ================= -->
+  <section id="projects">
+    <p class="eyebrow">SELECTED WORK</p>
+    <h2 class="section-title">Projects &amp; experience</h2>
+    <div class="dim-divider">2022 — PRESENT</div>
+
+    <div class="card-list">
+
+      <!-- EDIT: DUPLICATE THIS CARD to add a new entry -->
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Mechanical Engineering Intern</h3>
+            <div class="org">Epic Aircraft, Bend, OR</div>
+          </div>
+          <div class="dates">JUN 2026 – AUG 2026</div>
+        </div>
+        <ul>
+          <li>Led a manufacturing process improvement project focused on aircraft profile and body work</li>
+          <li>Coordinated with technicians and engineers across teams to hit project deadlines</li>
+        </ul>
+        <div class="tags"><span class="tag">Manufacturing</span><span class="tag">Aircraft</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>I-Beam Design Team Member</h3>
+            <div class="org">Cal Poly SAMPE Chapter</div>
+          </div>
+          <div class="dates">SEP 2025 – PRESENT</div>
+        </div>
+        <ul>
+          <li>Designed lightweight composite I-beam layup schedules in carbon fiber and fiberglass to bear load</li>
+          <li>Fabricated beams from 0°/±45°/90° prepreg fiber and 3-point-bend tested them on an Ametek 100 kN UTM</li>
+          <li>Placed 1st (Fiberglass I-Beam), 2nd (Carbon Fiber I-Beam), and 2nd (Open Design) at SAMPE 2026</li>
+        </ul>
+        <div class="tags"><span class="tag">Composites</span><span class="tag">Structural Testing</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Undergraduate Research Assistant</h3>
+            <div class="org">Cal Poly Multifunctional Materials Lab — Prof. Ramanan Sritharan</div>
+          </div>
+          <div class="dates">JUN 2025 – PRESENT</div>
+        </div>
+        <ul>
+          <li>Performed open-hole tensile testing on 0.025 and 0.050 wt% carbon-nanotube-reinforced epoxy panels</li>
+          <li>Presented findings at CAMX 2025 and SAMPE 2026</li>
+        </ul>
+        <div class="tags"><span class="tag">Materials Research</span><span class="tag">CNT Composites</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Makerspace Shop Technician</h3>
+            <div class="org">Cal Poly Mustang Makerspace</div>
+          </div>
+          <div class="dates">DEC 2025 – PRESENT</div>
+        </div>
+        <ul>
+          <li>Oversee 56+ FDM 3D printers, laser cutters, and an embroidery machine</li>
+          <li>Provide technical guidance on student projects and maintain digital fabrication tools</li>
+        </ul>
+        <div class="tags"><span class="tag">3D Printing</span><span class="tag">Fabrication</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Mechanical Engineering Intern</h3>
+            <div class="org">PAE Consulting Engineers, San Francisco, CA</div>
+          </div>
+          <div class="dates">JUN 2024 – JUN 2025</div>
+        </div>
+        <ul>
+          <li>Used Revu, Excel, and Revit to produce deliverables across all phases of the AEC design cycle</li>
+          <li>Collaborated with engineers to design high-end, sustainable HVAC systems</li>
+        </ul>
+        <div class="tags"><span class="tag">HVAC</span><span class="tag">Revit</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Mechanical Team Member</h3>
+            <div class="org">Cal Poly Human Powered Vehicle Club</div>
+          </div>
+          <div class="dates">MAR 2023 – PRESENT</div>
+        </div>
+        <ul>
+          <li>Designed and 3D printed the vehicle's controller mount and ¼"-28 thread caps in CAD</li>
+          <li>Built the vehicle's carbon fiber front and rear fairings and fastener assemblies</li>
+          <li>Placed 3rd in Design and 2nd in Drag at ASME EFx eHPVC 2024</li>
+        </ul>
+        <div class="tags"><span class="tag">CAD</span><span class="tag">Composites</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <p class="eyebrow">BACKGROUND</p>
+    <h2 class="section-title">About</h2>
+    <div class="dim-divider">EDUCATION — SKILLS — HONORS</div>
+
+    <div class="about-grid">
+      <div class="about-block">
+        <h3>EDUCATION</h3>
+        <p>
+          <strong>California Polytechnic State University, San Luis Obispo</strong><br>
+          Blended BS + MS, Mechanical Engineering, Physics Minor<br>
+          GPA: 3.96 · Expected Graduation: May 2027
+        </p>
+      </div>
+
+      <div class="about-block">
+        <h3>SKILLS</h3>
+        <ul>
+          <li>SolidWorks (CSWA), Fusion 360, Ansys FEA, Netfabb</li>
+          <li>MATLAB, Python, GD&amp;T</li>
+          <li>3D printing; 100+ hours in Cal Poly machine shops</li>
+          <li>Certified in lathe, welding, mill, and composites work</li>
+        </ul>
+      </div>
+
+      <div class="about-block">
+        <h3>HONORS &amp; AWARDS</h3>
+        <ul>
+          <li>2026 Exceptional Achievement in Academics and Research — Cal Poly ME Department</li>
+          <li>4× Cal Poly President's List, 2022–2027</li>
+          <li>Cal Poly Merit Scholarship Recipient</li>
+        </ul>
+      </div>
+
+      <div class="about-block">
+        <h3>INVOLVEMENT</h3>
+        <ul>
+          <li>Captain, Cal Poly Club Ultimate Frisbee Team — Sep 2022–Present</li>
+          <li>Tau Beta Pi Honor Society — Jun 2024–Present</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <p class="eyebrow">GET IN TOUCH</p>
+    <h2 class="section-title">Contact</h2>
+    <div class="dim-divider">SAN LUIS OBISPO, CA</div>
+
+    <div class="contact-box">
+      <p style="color:var(--ink-soft); margin:0;">Open to mechanical engineering internships and full-time roles in robotics, composites, and precision manufacturing.</p>
+      <div class="contact-links">
+        <a href="mailto:wyatt.barnes22@gmail.com">wyatt.barnes22@gmail.com</a>
+        <a href="tel:9253340659">(925) 334-0659</a>
+        <a href="https://linkedin.com/in/wybarnes" target="_blank" rel="noopener">linkedin.com/in/wybarnes</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>WYATT BARNES · E.I.T. · BUILT WITH ONE HTML FILE</footer>
+
+</body>
+</html>
