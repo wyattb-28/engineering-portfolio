@@ -164,8 +164,8 @@
   */
   .avatar {
     position: relative;
-    width: 132px;
-    height: 132px;
+    width: 165px;
+    height: 165px;
     margin: 0 auto 32px;
   }
   .avatar .mark {
@@ -330,6 +330,29 @@
     border-radius: 2px;
   }
 
+  /* ---------- OPTIONAL: PHOTOS INSIDE A PROJECT CARD ----------
+     Add <img class="card-photo" src="..."> inside any .card to use this.
+     See the "ADD A PHOTO TO A CARD" comment further down for an example. */
+  .card-photo {
+    width: 100%;
+    border-radius: var(--radius);
+    margin: 12px 0 14px;
+    display: block;
+  }
+
+  /* ---------- ARTICLE / LINK LIST (used in Research section) ---------- */
+  .card a.card-link-title {
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card a.card-link-title:hover { color: var(--blue); }
+  .card .read-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
   /* ---------- ABOUT ---------- */
   .about-grid {
     display: grid;
@@ -387,8 +410,10 @@
 
 <header class="nav-wrap">
   <nav class="titleblock">
-    <a href="#projects">Projects</a>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
     <a href="#contact" class="contact-btn">Contact</a>
   </nav>
 </header>
@@ -411,110 +436,6 @@
       <a class="btn ghost" href="https://linkedin.com/in/wybarnes" target="_blank" rel="noopener">LinkedIn</a>
       <!-- EDIT: point this at your resume PDF once you've added it to the site folder -->
       <a class="btn primary" href="Wyatt_Barnes_Resume.pdf" target="_blank" rel="noopener">Resume</a>
-    </div>
-  </section>
-
-  <!-- ================= PROJECTS / EXPERIENCE ================= -->
-  <section id="projects">
-    <p class="eyebrow">SELECTED WORK</p>
-    <h2 class="section-title">Experience</h2>
-    <div class="dim-divider">2022 — PRESENT</div>
-
-    <div class="card-list">
-
-      <!-- EDIT: DUPLICATE THIS CARD to add a new entry -->
-      <article class="card">
-        <div class="card-top">
-          <div>
-            <h3>Mechanical Engineering Intern</h3>
-            <div class="org">Epic Aircraft, Bend, OR</div>
-          </div>
-          <div class="dates">JUN 2026 – AUG 2026</div>
-        </div>
-        <ul>
-          <li>Led a manufacturing process improvement project focused on aircraft profile and body work</li>
-          <li>Coordinated with technicians and engineers across teams to hit project deadlines</li>
-        </ul>
-        <div class="tags"><span class="tag">Manufacturing</span><span class="tag">Aircraft</span></div>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div>
-            <h3>I-Beam Design Team Member</h3>
-            <div class="org">Cal Poly SAMPE Chapter</div>
-          </div>
-          <div class="dates">SEP 2025 – PRESENT</div>
-        </div>
-        <ul>
-          <li>Designed lightweight composite I-beam layup schedules in carbon fiber and fiberglass to bear load</li>
-          <li>Fabricated beams from 0°/±45°/90° prepreg fiber and 3-point-bend tested them on an Ametek 100 kN UTM</li>
-          <li>Placed 1st (Fiberglass I-Beam), 2nd (Carbon Fiber I-Beam), and 2nd (Open Design) at SAMPE 2026</li>
-        </ul>
-        <div class="tags"><span class="tag">Composites</span><span class="tag">Structural Testing</span></div>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div>
-            <h3>Undergraduate Research Assistant</h3>
-            <div class="org">Cal Poly Multifunctional Materials Lab — Prof. Ramanan Sritharan</div>
-          </div>
-          <div class="dates">JUN 2025 – PRESENT</div>
-        </div>
-        <ul>
-          <li>Performed open-hole tensile testing on 0.025 and 0.050 wt% carbon-nanotube-reinforced epoxy panels</li>
-          <li>Presented findings at CAMX 2025 and SAMPE 2026</li>
-        </ul>
-        <div class="tags"><span class="tag">Materials Research</span><span class="tag">CNT Composites</span></div>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div>
-            <h3>Makerspace Shop Technician</h3>
-            <div class="org">Cal Poly Mustang Makerspace</div>
-          </div>
-          <div class="dates">DEC 2025 – PRESENT</div>
-        </div>
-        <ul>
-          <li>Oversee 56+ FDM 3D printers, laser cutters, and an embroidery machine</li>
-          <li>Provide technical guidance on student projects and maintain digital fabrication tools</li>
-        </ul>
-        <div class="tags"><span class="tag">3D Printing</span><span class="tag">Fabrication</span></div>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div>
-            <h3>Mechanical Engineering Intern</h3>
-            <div class="org">PAE Consulting Engineers, San Francisco, CA</div>
-          </div>
-          <div class="dates">JUN 2024 – JUN 2025</div>
-        </div>
-        <ul>
-          <li>Used Revu, Excel, and Revit to produce deliverables across all phases of the AEC design cycle</li>
-          <li>Collaborated with engineers to design high-end, sustainable HVAC systems</li>
-        </ul>
-        <div class="tags"><span class="tag">HVAC</span><span class="tag">Revit</span></div>
-      </article>
-
-      <article class="card">
-        <div class="card-top">
-          <div>
-            <h3>Mechanical Team Member</h3>
-            <div class="org">Cal Poly Human Powered Vehicle Club</div>
-          </div>
-          <div class="dates">MAR 2023 – PRESENT</div>
-        </div>
-        <ul>
-          <li>Designed and 3D printed the vehicle's controller mount and ¼"-28 thread caps in CAD</li>
-          <li>Built the vehicle's carbon fiber front and rear fairings and fastener assemblies</li>
-          <li>Placed 3rd in Design and 2nd in Drag at ASME EFx eHPVC 2024</li>
-        </ul>
-        <div class="tags"><span class="tag">CAD</span><span class="tag">Composites</span></div>
-      </article>
-
     </div>
   </section>
 
@@ -560,6 +481,169 @@
           <li>Tau Beta Pi Honor Society — Jun 2024–Present</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
+    <p class="eyebrow">WORK EXPERIENCE</p>
+    <h2 class="section-title">Experience</h2>
+    <div class="dim-divider">2024 — PRESENT</div>
+
+    <div class="card-list">
+
+      <!-- EDIT: DUPLICATE THIS CARD to add a new entry -->
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Mechanical Engineering Intern</h3>
+            <div class="org">Epic Aircraft, Bend, OR</div>
+          </div>
+          <div class="dates">JUN 2026 – AUG 2026</div>
+        </div>
+        <!-- ADD A PHOTO TO A CARD: uncomment and point at your image
+        <img class="card-photo" src="images/epic-aircraft.jpg" alt="">
+        -->
+        <ul>
+          <li>Led a manufacturing process improvement project focused on aircraft profile and body work</li>
+          <li>Coordinated with technicians and engineers across teams to hit project deadlines</li>
+        </ul>
+        <div class="tags"><span class="tag">Manufacturing</span><span class="tag">Aircraft</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Makerspace Shop Technician</h3>
+            <div class="org">Cal Poly Mustang Makerspace</div>
+          </div>
+          <div class="dates">DEC 2025 – PRESENT</div>
+        </div>
+        <ul>
+          <li>Oversee 56+ FDM 3D printers, laser cutters, and an embroidery machine</li>
+          <li>Provide technical guidance on student projects and maintain digital fabrication tools</li>
+        </ul>
+        <div class="tags"><span class="tag">3D Printing</span><span class="tag">Fabrication</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Mechanical Engineering Intern</h3>
+            <div class="org">PAE Consulting Engineers, San Francisco, CA</div>
+          </div>
+          <div class="dates">JUN 2024 – JUN 2025</div>
+        </div>
+        <ul>
+          <li>Used Revu, Excel, and Revit to produce deliverables across all phases of the AEC design cycle</li>
+          <li>Collaborated with engineers to design high-end, sustainable HVAC systems</li>
+        </ul>
+        <div class="tags"><span class="tag">HVAC</span><span class="tag">Revit</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <p class="eyebrow">SELECTED WORK</p>
+    <h2 class="section-title">Projects</h2>
+    <div class="dim-divider">2023 — PRESENT</div>
+
+    <div class="card-list">
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>I-Beam Design Team Member</h3>
+            <div class="org">Cal Poly SAMPE Chapter</div>
+          </div>
+          <div class="dates">SEP 2025 – PRESENT</div>
+        </div>
+        <!-- ADD A PHOTO TO A CARD: uncomment and point at your image
+        <img class="card-photo" src="images/ibeam.jpg" alt="">
+        -->
+        <ul>
+          <li>Designed lightweight composite I-beam layup schedules in carbon fiber and fiberglass to bear load</li>
+          <li>Fabricated beams from 0°/±45°/90° prepreg fiber and 3-point-bend tested them on an Ametek 100 kN UTM</li>
+          <li>Placed 1st (Fiberglass I-Beam), 2nd (Carbon Fiber I-Beam), and 2nd (Open Design) at SAMPE 2026</li>
+        </ul>
+        <div class="tags"><span class="tag">Composites</span><span class="tag">Structural Testing</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Mechanical Team Member</h3>
+            <div class="org">Cal Poly Human Powered Vehicle Club</div>
+          </div>
+          <div class="dates">MAR 2023 – PRESENT</div>
+        </div>
+        <ul>
+          <li>Designed and 3D printed the vehicle's controller mount and ¼"-28 thread caps in CAD</li>
+          <li>Built the vehicle's carbon fiber front and rear fairings and fastener assemblies</li>
+          <li>Placed 3rd in Design and 2nd in Drag at ASME EFx eHPVC 2024</li>
+        </ul>
+        <div class="tags"><span class="tag">CAD</span><span class="tag">Composites</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= RESEARCH ================= -->
+  <section id="research">
+    <p class="eyebrow">RESEARCH</p>
+    <h2 class="section-title">Research</h2>
+    <div class="dim-divider">2025 — PRESENT</div>
+
+    <div class="card-list">
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Undergraduate Research Assistant</h3>
+            <div class="org">Cal Poly Multifunctional Materials Lab — Prof. Ramanan Sritharan</div>
+          </div>
+          <div class="dates">JUN 2025 – PRESENT</div>
+        </div>
+        <ul>
+          <li>Performed open-hole tensile testing on 0.025 and 0.050 wt% carbon-nanotube-reinforced epoxy panels</li>
+          <li>Presented findings at CAMX 2025 and SAMPE 2026</li>
+        </ul>
+        <div class="tags"><span class="tag">Materials Research</span><span class="tag">CNT Composites</span></div>
+      </article>
+
+    </div>
+
+    <!-- EDIT: ARTICLES & PRESENTATIONS
+         Each entry below is a linkable article, paper, or talk.
+         DUPLICATE ONE <article class="card"> BLOCK to add another —
+         just change the title text, the href, the venue, and the date. -->
+    <div class="dim-divider" style="margin-top:40px;">ARTICLES &amp; PRESENTATIONS</div>
+    <div class="card-list">
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3><a class="card-link-title" href="#" target="_blank" rel="noopener">Open-Hole Tensile Behavior of CNT-Reinforced Epoxy Panels</a></h3>
+            <div class="org">CAMX 2025</div>
+          </div>
+          <div class="dates">2025</div>
+        </div>
+        <a class="read-link" href="#" target="_blank" rel="noopener">Read more →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3><a class="card-link-title" href="#" target="_blank" rel="noopener">Composite I-Beam Layup Design and Testing</a></h3>
+            <div class="org">SAMPE 2026</div>
+          </div>
+          <div class="dates">2026</div>
+        </div>
+        <a class="read-link" href="#" target="_blank" rel="noopener">Read more →</a>
+      </article>
+
     </div>
   </section>
 
