@@ -143,11 +143,18 @@
   nav.titleblock a:hover { color: var(--ink); }
 
   nav.titleblock a.contact-btn {
-    background: var(--ink);
+    background: var(--blue);
     color: #fff;
     font-weight: 600;
+    box-shadow: 0 2px 0 var(--blue-deep);
+    transform: translateY(0);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease;
   }
   nav.titleblock a.contact-btn:hover { background: var(--blue-deep); }
+  nav.titleblock a.contact-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 var(--blue-deep);
+  }
 
   /* ---------- HERO ---------- */
   .hero {
@@ -230,8 +237,19 @@
     border: 1.5px solid var(--ink);
     transition: background 0.15s ease, color 0.15s ease;
   }
-  .btn.primary { background: var(--ink); color: #fff; }
+  .btn.primary {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+    box-shadow: 0 2px 0 var(--blue-deep);
+    transform: translateY(0);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.15s ease;
+  }
   .btn.primary:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
+  .btn.primary:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 var(--blue-deep);
+  }
   .btn.ghost { background: transparent; color: var(--ink); }
   .btn.ghost:hover { background: var(--ink); color: #fff; }
 
