@@ -199,6 +199,21 @@
   border: 2px solid var(--blue);
   }
 
+  .nameplate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 16px;
+  }
+  .nameplate .name {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+
   h1.headline {
     font-size: 2.5rem;
     line-height: 1.18;
@@ -424,6 +439,11 @@
   <section class="hero">
     <div class="avatar">
      <img src="images/profile.jpg" alt="Wyatt Barnes" class="avatar-photo">
+    </div>
+
+    <div class="nameplate">
+      <span class="name">WYATT BARNES</span>
+      <span class="tag">E.I.T.</span>
     </div>
 
     <h1 class="headline">Mechanical engineer building robotic&nbsp;systems, composites, and precision hardware</h1>
