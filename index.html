@@ -67,8 +67,17 @@
     --radius: 3px;
   }
 
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: smooth; }
+
+  /* Only show a focus ring for keyboard navigation (Tab key),
+     not after a mouse click or a touch tap — this is what was
+     making Resume/Contact look "stuck" after clicking. */
+  a:focus { outline: none; }
+  a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
 
   body {
     margin: 0;
