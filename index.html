@@ -70,6 +70,12 @@
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: smooth; }
 
+  /* Light border on every image by default. More specific rules
+   (like .avatar-photo's blue border) override this automatically. */
+  img {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+
   /* Only show a focus ring for keyboard navigation (Tab key),
      not after a mouse click or a touch tap — this is what was
      making Resume/Contact look "stuck" after clicking. */
@@ -588,7 +594,7 @@
         <img class="card-photo" src="images/sampe_award.jpeg" alt="">
       
         <ul>
-          <li>Designed lightweight composite I-beam layup schedules in carbon fiber and fiberglass to bear load</li>
+          <li>Designed lightweight composite I-beam layup schedules for carbon fiber and fiberglass to bear loads upwards of 5600 lbf</li>
           <li>Fabricated beams from 0°/±45°/90° prepreg fiber and 3-point-bend tested them on an Ametek 100 kN UTM</li>
           <li>Placed 1st (Fiberglass I-Beam), 1st (Poster Overall), 2nd (Carbon Fiber I-Beam), and 2nd (Open Design) at SAMPE 2026</li>
         </ul>
@@ -617,6 +623,60 @@
         <a class="read-link" href="https://ceng.calpoly.edu/news/cal-poly-team-makes-return-to-asme-e-human-powered-vehicles-challenge-after-five-year-hiatus" target="_blank" rel="noopener">Read more →</a>
         <br><br>
         <div class="tags"><span class="tag">CAD</span><span class="tag">Composites</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>Design for Repairability Senior Project</h3>
+            <div class="org">Cal Poly Mechanical Engineering Department</div>
+          </div>
+          <div class="dates">SEP 2025 – JUN 2026</div>
+        </div>
+        <img class="card-photo" src="images/senior_project.jpeg" alt="">
+        <ul>
+          <li>Designed and 3D printed a modified hair dryer casing illustrating repairability principles</li>
+          <li>Collaborated with iFixit to evaluate ease of appliance repair</li>
+          <li>Created demo tools used for course curriculum in ME 4470: Designing Products for Repairability</li>
+        </ul>
+        <a class="read-link" href="https://digitalcommons.calpoly.edu/mesp/870" target="_blank" rel="noopener">Read more →</a>
+        <br><br>
+        <div class="tags"><span class="tag">CAD</span><span class="tag">Mechanical Design</span><span class="tag">3D Printing</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>IME 432 Course Project</h3>
+            <div class="org">Cal Poly Industrial and Manufacturing Engineering Department</div>
+          </div>
+          <div class="dates">MAR 2026 – JUN 2026</div>
+        </div>
+        <img class="card-photo" src="images/additive_bracket.png" alt="">
+        <ul>
+          <li>Designed a lightweight load-bearing bracket in Fusion 360 using topology optimization techniques</li>
+          <li>Manufactured bracket from stainless steel with SLM printer, post-processed with wire EDM</li>
+          <li>Analyzed part tolerances with Keyence 3D CMM, performed destructive testing to verify specifications</li>
+        </ul>
+        <div class="tags"><span class="tag">Additive Manufacturing</span><span class="tag">3D Metrology</span></div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <div>
+            <h3>ME 423 Course Project</h3>
+            <div class="org">Cal Poly Mechanical Engineering Department</div>
+          </div>
+          <div class="dates">JAN 2026 – MAR 2026</div>
+        </div>
+        <img class="card-photo" src="images/quanser.jpeg" alt="">
+        <ul>
+          <li>Wrote Python and MATLAB scripts to control Quanser QArm robotic arm</li>
+          <li>Estimated real-time projectile trajectory using depth-enabled camera and ArUco markers</li>
+          <li>3D printed netted end effector to dampen projectile bounceback</li>
+          <li>Implemented successful vision-guided ball catching from various initial conditions</li>
+        </ul>
+        <div class="tags"><span class="tag">Robotics</span><span class="tag">MATLAB</span><span class="tag">Simulink</span></div>
       </article>
 
     </div>
